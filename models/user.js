@@ -10,20 +10,21 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true    // email unique
   },
+
   password:{
     type: String,
     required: true
-  }
+  },
+
   role:{
     type: String,
     enum:["user","admin"],
     default:"user"
   } 
-});
-
+}, { timestamps: true });
 
 // إنشاء model
-const User = mongoose.model("User", userSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
 export default User;
 

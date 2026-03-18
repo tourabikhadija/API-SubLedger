@@ -19,17 +19,13 @@ const subscriptionSchema = new mongoose.Schema({
    createdAt :{
     type : Date,
     default : Date.now 
-   },
-  
-
-  userId:{   //reference vers l'utilisateur
-  
-  } 
+   }
+ 
 });
 
 
 // إنشاء model
-const subscription = mongoose.model("User", subscriptionSchema);
+const Subscription = mongoose.model("Subscription", subscriptionSchema);
 
-export default subscription;
+export default Subscription;
 

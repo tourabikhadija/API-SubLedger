@@ -1,3 +1,4 @@
+import { body, validationResult } from "express-validator";
 export const validateSubscription = [
     body("name").notEmpty().withMessage("Nom de l'abonnement requis"),
     body("price").isFloat({ gt: 0 }).withMessage("Prix doit être supérieur à 0"),

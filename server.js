@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 
 const app = express();
@@ -11,7 +13,7 @@ app.use(express.json());
 
 
 app.use('/api/subscriptions', subscriptionRoutes);
-app.use('/api/user', userRoutes);
+ app.use('/api/user', userRoutes);
 app.use('/api/admin', adminRoutes);
 
 // connexion mongo
@@ -24,7 +26,7 @@ mongoose
     console.error("MongoDb connection error:", err);
 });
 
-app.listen(3002, () =>{
+app.listen(8000, () =>{
     console.log("server is started");
 });
 
